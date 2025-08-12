@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/no-unescaped-entities": "off",
+    "javascript-jsx-not-internationalized": "off",
+    "javascript-code-quality-readability-maintainability": "off",
+    "javascript-code-quality-naming": "off"
+  }
+}

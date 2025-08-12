@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.font-permanent-marker {
+  font-family: 'Permanent Marker', cursive;
+}
