@@ -27,14 +27,18 @@ export default function HeroSection() {
               <a href="#" className="text-sm/6 font-semibold text-white">Nuestras sedes <span aria-hidden="true">→</span></a>
             </div>
             
-            <div className="flex gap-6 p-6">
-              <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-xl p-6 max-w-xs shadow-lg w-1/2">
+            <div className="flex flex-col sm:flex-row gap-6 p-6">
+              <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg sm:w-1/2">
                 <h3 className="text-xl font-semibold text-yellow-400 mb-2">Sede Principal</h3>
-                <span className="text-white/80 text-sm">Lechería, a 2 cuadras de Av. Principal de Lechería</span>
+                <span className="text-white/80 text-sm">
+                  Lechería, a 2 cuadras de Av. Principal de Lechería
+                </span>
               </div>
-              <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-xl p-6 max-w-xs shadow-lg w-1/2">
+              <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg sm:w-1/2">
                 <h3 className="text-xl font-semibold text-yellow-400 mb-2">Sede Smash</h3>
-                <span className="text-white/80 text-sm">Lechería, Av. Intercomunal, Atras de Inversan</span>
+                <span className="text-white/80 text-sm">
+                  Lechería, Av. Intercomunal, Atras de Inversan
+                </span>
               </div>
             </div>
           </div>

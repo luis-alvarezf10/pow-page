@@ -64,7 +64,7 @@ export default function ServicesSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col justify-center items-center text-center mb-16">
           <h2 className="text-6xl font-bold text-yellow-400 mb-4">Nuestros Servicios</h2>
-          <p className="text-gray-400 text-lg w-1/2 mx-auto">
+          <p className="text-gray-400 text-lg mx-auto">
             Ofrecemos una amplia gama de servicios diseñados para ayudarte a alcanzar tus objetivos fitness, sin importar tu nivel actual o tus metas específicas.
           </p>
         </div>
