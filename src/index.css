@@ -3,3 +3,11 @@
 .font-permanent-marker {
   font-family: 'Permanent Marker', cursive;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-padding-top: 4rem;
+}
