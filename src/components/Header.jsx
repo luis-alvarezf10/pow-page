@@ -8,7 +8,8 @@ export default function Header() {
   const sections = [
     { id: 'hero', name: 'Inicio' },
     { id: 'services', name: 'Servicios' },
-    { id: 'pricing', name: 'Precios' }
+    { id: 'pricing', name: 'Precios' },
+    { id: 'location', name: 'Ubicación' }
   ];
 
   useEffect(() => {

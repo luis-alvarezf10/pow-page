@@ -24,7 +24,7 @@ export default function HeroSection() {
             
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <StartButton />
-              <a href="#" className="text-sm/6 font-semibold text-white">Nuestras sedes <span aria-hidden="true">→</span></a>
+              <button onClick={() => document.getElementById('location')?.scrollIntoView({ behavior: 'smooth' })} className="text-sm/6 font-semibold text-white hover:text-yellow-400 transition-colors">Nuestras sedes <span aria-hidden="true">→</span></button>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6 p-6">
