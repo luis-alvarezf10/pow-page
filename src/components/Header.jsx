@@ -57,7 +57,7 @@ export default function Header() {
               <button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm font-medium transition-colors cursor-pointer ${
                   activeSection === section.id 
                     ? 'text-yellow-400' 
                     : 'text-gray-300 hover:text-white'

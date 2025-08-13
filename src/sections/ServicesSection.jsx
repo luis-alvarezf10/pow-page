@@ -36,7 +36,7 @@ export default function ServicesSection() {
     {
       title: 'Running',
       description: 'Plan de entrenamiento de running, sesiones cada 2 dias a la semana con la mejor planificación',
-      image: 'https://www.feda.net/wp-content/uploads/2017/08/entrenamiento-fuerza-corredores.jpg',
+      image: 'https://www.shape.com/thmb/XhaeY6hfYXOUEmpvxZKjOi_-H5A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/running-longer-or-faster-31e97070bda14ffc8afdea52094504c7.jpg',
       availability: 'Gratuito'
     },
     {
@@ -63,8 +63,8 @@ export default function ServicesSection() {
     <section id="services" className="bg-gray-800 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col justify-center items-center text-center mb-16">
-          <h2 className="text-6xl font-bold text-yellow-400 mb-4">Nuestros Servicios</h2>
-          <p className="text-gray-400 text-lg mx-auto">
+          <h2 className="text-4xl font-bold text-yellow-400 mb-4">Nuestros Servicios</h2>
+          <p className="text-gray-400 text-lg">
             Ofrecemos una amplia gama de servicios diseñados para ayudarte a alcanzar tus objetivos fitness, sin importar tu nivel actual o tus metas específicas.
           </p>
         </div>
