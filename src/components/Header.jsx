@@ -8,6 +8,7 @@ export default function Header() {
   const sections = [
     { id: 'hero', name: 'Inicio' },
     { id: 'services', name: 'Servicios' },
+    { id: 'staff', name: 'Equipo' },
     { id: 'pricing', name: 'Precios' },
     { id: 'location', name: 'Ubicación' }
   ];
