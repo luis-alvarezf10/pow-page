@@ -10,7 +10,8 @@ export default function Header() {
     { id: 'services', name: 'Servicios' },
     { id: 'staff', name: 'Equipo' },
     { id: 'pricing', name: 'Precios' },
-    { id: 'location', name: 'Ubicación' }
+    { id: 'location', name: 'Ubicación' },
+    { id: 'testimonials', name: 'Testimonios' },
   ];
 
   useEffect(() => {
@@ -49,10 +50,7 @@ export default function Header() {
     }`}>
       <nav className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-permanent-marker text-yellow-400">Pow</span>
-            <span className="text-xl font-semibold text-white">Fitness</span>
-          </div>
+          <img src="/assets/images/logo-pow.png" alt="logo de pow en amarillo"  className="w-20"/>
           
           <div className="hidden md:flex items-center space-x-8">
             {sections.map((section) => (

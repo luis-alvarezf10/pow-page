@@ -37,3 +37,125 @@ body {
 .animate-scroll-smooth {
   animation: scroll-smooth 20s linear infinite;
 }
+
+@keyframes carousel-continuous {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel-continuous {
+  animation: carousel-continuous 25s linear infinite;
+}
+
+/* Social Media Styles */
+.social-container {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(250, 204, 21);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  border-radius: 30px;
+}
+
+.social-container:hover {
+  transform: scale(1.2);
+}
+
+.social-container:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.social-svg {
+  width: 17px;
+}
+
+.social-svg path {
+  fill: rgb(255, 255, 255);
+}
+
+.social-container:hover .social-svg {
+  animation: slide-in-top 0.3s both;
+}
+
+.instagram:hover {
+  background-color: #E4405F;
+  transition-duration: 0.3s;
+}
+
+.twitter:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+}
+
+.linkedin:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+}
+
+.whatsapp:hover {
+  background-color: #25D366;
+  transition-duration: 0.3s;
+}
+
+.tiktok:hover {
+  background-color: #000000;
+  transition-duration: 0.3s;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Testimonials Styles */
+.testimonial-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  bottom: -70%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.15) 0%, transparent 70%);
+  transform: translateX(-50%);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.testimonial-card:hover::before {
+  bottom: -50%;
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.3) 0%, transparent 70%);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(250, 204, 21, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
