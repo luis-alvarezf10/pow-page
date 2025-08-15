@@ -108,7 +108,7 @@ export default function ServicesSection() {
           
           <button 
             onClick={prevSlide}
-            className="absolute -left-6 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm border border-white/30 text-white p-4 rounded-full transition-colors z-10"
+            className="absolute -left-6 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm border border-white/30 text-white p-4 rounded-full transition-colors z-10 cursor-pointer"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -117,7 +117,7 @@ export default function ServicesSection() {
           
           <button 
             onClick={nextSlide}
-            className="absolute -right-6 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm border border-white/30 text-white p-4 rounded-full transition-colors z-10"
+            className="absolute -right-6 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm border border-white/30 text-white p-4 rounded-full transition-colors z-10 cursor-pointer"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
