@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import ScrollingBanner from "../components/ScrollingBanner";
+import ScrollToTop from "../components/ScrollToTop";
 import Footer from "../components/Footer";
 import HeroSection from "../sections/HeroSection";
 import ServicesSection from "../sections/ServicesSection";
@@ -20,6 +21,7 @@ export default function Home() {
       <LocationSection />
       <TestimonialsSection />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

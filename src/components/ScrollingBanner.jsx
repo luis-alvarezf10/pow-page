@@ -4,20 +4,12 @@ const ScrollingBanner = () => {
   const text = "Potenciamos tu vida en 60 minutos";
   
   return (
-    <div className="bg-yellow-400 py-3 overflow-hidden relative">
+    <div className="bg-[#c6e4ee] py-1 overflow-hidden relative">
       <div className="flex animate-scroll-smooth">
         {/* Duplicamos el contenido para scroll infinito suave */}
         <div className="flex items-center whitespace-nowrap">
           {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="text-black font-semibold text-lg mx-8 flex items-center gap-2">
-              <Zap className="w-5 h-5" /> {text}
-              <Zap className="w-5 h-5" />
-            </span>
-          ))}
-        </div>
-        <div className="flex items-center whitespace-nowrap">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i + 8} className="text-black font-semibold text-lg mx-8 flex items-center gap-2">
+            <span key={i} className="font-semibold text-lg mx-8 flex items-center gap-2">
               <Zap className="w-5 h-5" /> {text}
               <Zap className="w-5 h-5" />
             </span>

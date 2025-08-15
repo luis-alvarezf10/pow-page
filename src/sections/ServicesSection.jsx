@@ -60,11 +60,11 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="bg-gray-800 py-24">
+    <section id="services" className="bg-[#141414] py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col justify-center items-center text-center mb-16">
-          <h2 className="text-4xl font-bold text-yellow-400 mb-4">Nuestros Servicios</h2>
-          <p className="text-gray-400 text-lg">
+          <h2 className="text-4xl font-bold text-[#fdff00] mb-4">Nuestros Servicios</h2>
+          <p className="text-gray-400 text-lg w-full md:w-3/4">
             Ofrecemos una amplia gama de servicios diseñados para ayudarte a alcanzar tus objetivos fitness, sin importar tu nivel actual o tus metas específicas.
           </p>
         </div>
