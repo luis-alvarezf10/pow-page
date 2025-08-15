@@ -46,7 +46,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 backdrop-blur-sm border-b border-white/10 transition-all duration-500 w-[90%] rounded-full ${
+    <header className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 backdrop-blur-sm border-b border-white/10 transition-all duration-500 w-[90%] rounded-full border border-white/10 ${
       isVisible ? 'bg-black/30 translate-y-3' : 'bg-gray-900/0 -translate-y-full'
     }`}>
       <nav className="mx-auto max-w-7xl px-6 lg:px-8">
