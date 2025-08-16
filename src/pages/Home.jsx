@@ -17,6 +17,7 @@ export default function Home() {
       <ScrollingBanner />
       <ServicesSection />
       <StaffSection />
+      <ScrollingBanner />
       <PricingSection />
       <LocationSection />
       <TestimonialsSection />
