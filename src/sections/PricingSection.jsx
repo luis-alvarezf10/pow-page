@@ -35,10 +35,19 @@ export default function PricingSection() {
 
   return (
     <section id="pricing" className="relative bg-[#0d0d0d] py-24 overflow-hidden">
+      {/* Animated smoke particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-2 h-2 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '0s', animationDuration: '3s'}}></div>
+        <div className="absolute top-40 right-20 w-1 h-1 bg-blue-300/30 rounded-full animate-bounce" style={{animationDelay: '1s', animationDuration: '4s'}}></div>
+        <div className="absolute bottom-40 left-1/4 w-3 h-3 bg-yellow-400/20 rounded-full animate-ping" style={{animationDelay: '2s', animationDuration: '5s'}}></div>
+        <div className="absolute top-60 right-1/3 w-2 h-2 bg-cyan-300/25 rounded-full animate-pulse" style={{animationDelay: '0.5s', animationDuration: '3.5s'}}></div>
+        <div className="absolute bottom-20 right-10 w-1 h-1 bg-white/30 rounded-full animate-bounce" style={{animationDelay: '1.5s', animationDuration: '4.5s'}}></div>
+        <div className="absolute top-32 left-1/3 w-2 h-2 bg-blue-400/20 rounded-full animate-ping" style={{animationDelay: '3s', animationDuration: '6s'}}></div>
+      </div>
       <div aria-hidden="true" className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-3xl sm:-top-80 pointer-events-none">
         <div 
           style={{clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"}} 
-          className="relative left-1/2 aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#5d8d99] to-[#9addff] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          className="relative left-1/2 aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#5d8d99] to-gray-300 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
         ></div>
       </div>
       
@@ -52,8 +61,8 @@ export default function PricingSection() {
           {plans.map((plan, index) => (
             <div 
               key={index} 
-              className={`backdrop-blur-md border rounded-xl p-6 relative border-white/20 ${
-                plan.popular ? 'bg-white/10 h-120' : 'bg-white/5 h-110'
+              className={`backdrop-blur-md border rounded-xl p-6 relative border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+                plan.popular ? 'bg-white/10 h-120 shadow-[0_0_30px_rgba(253,255,0,0.1)]' : 'bg-white/5 h-110 hover:bg-white/10'
               }`}
             >
               {plan.popular && (
