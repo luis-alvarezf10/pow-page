@@ -1,5 +1,6 @@
 import StartButton from "../components/StartButton";
 import SocialButtons from "../components/SocialButtons";
+import SplitText from "../components/SplitText";
 
 export default function HeroSection() {
   return (
@@ -21,7 +22,19 @@ export default function HeroSection() {
             <div className="flex items-end justify-center">
               <img src="/assets/images/pow-white.png" alt="logo pow fitness" className="w-1/2 relative left-5 transition-transform duration-300 hover:scale-110"/>
             </div>
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">Potenciamos tu vida en 60 minutos</p>
+            <SplitText
+              text="Potenciamos tu vida en 60 minutos"
+              className=""
+              delay={100}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+            />
             
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <StartButton />
@@ -29,13 +42,13 @@ export default function HeroSection() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6 p-6">
-              <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg sm:w-1/2">
+              <div className="bg-black/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg sm:w-1/2">
                 <h3 className="text-xl font-semibold text-[#c6e4ee] mb-2">Sede Principal</h3>
                 <span className="text-white/80 text-sm">
                   Lechería, a 2 cuadras de Av. Principal de Lechería
                 </span>
               </div>
-              <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg sm:w-1/2">
+              <div className="bg-black/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg sm:w-1/2">
                 <h3 className="text-xl font-semibold text-[#c6e4ee] mb-2">Sede Smash</h3>
                 <span className="text-white/80 text-sm">
                   Lechería, Av. Intercomunal, Atras de Inversan

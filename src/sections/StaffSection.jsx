@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import ScrollFloat from '../components/ScrollFloatText';
 const StaffSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -49,12 +49,20 @@ const StaffSection = () => {
   };
 
   return (
-    <section id="staff" className="bg-gradient-to-t from-[#080808] to-[#0d0d0d] py-10 relative" style={{backgroundImage: 'url(/assets/images/cemento.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+    <section id="staff" className="bg-gradient-to-t from-[#080808] to-[#0d0d0d] py-10 relative z-2" style={{backgroundImage: 'url(/assets/images/cemento.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
       <div className="absolute inset-0 bg-black/30"></div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="flex flex-col justify-center items-center text-center mb-10">
-          <span className='text-white text-md font-semibold'>Conoce a nuestro</span>
-          <span className='text-[#c6e4ee] font-bold text-6xl'>Staff</span>
+          <ScrollFloat
+            animationDuration={2}
+            ease='back.inOut(2)'
+            scrollStart='center bottom+=50%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            textColor='#bce5ef'
+          >
+            Staff
+          </ScrollFloat>
           <p className="text-white text-lg my-5">
             Profesionales especializados y certificados para acompañarte en tu transformación
           </p>

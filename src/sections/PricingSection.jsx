@@ -1,4 +1,6 @@
 import { Zap, Users, Target, Crown, Rocket, Flame, Check } from 'lucide-react';
+import ScrollFloat from '../components/ScrollFloatText';
+import Particles from '../components/Particles';
 
 export default function PricingSection() {
   const plans = [
@@ -34,8 +36,8 @@ export default function PricingSection() {
   ];
 
   return (
-    <section id="pricing" className="relative bg-[#0d0d0d] py-24 overflow-hidden">
-      {/* Animated smoke particles */}
+    <section id="pricing" className="relative bg-[#0d0d0d] pt-10 overflow-hidden">
+      {/* Animated smoke particles
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-2 h-2 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '0s', animationDuration: '3s'}}></div>
         <div className="absolute top-40 right-20 w-1 h-1 bg-blue-300/30 rounded-full animate-bounce" style={{animationDelay: '1s', animationDuration: '4s'}}></div>
@@ -43,6 +45,19 @@ export default function PricingSection() {
         <div className="absolute top-60 right-1/3 w-2 h-2 bg-cyan-300/25 rounded-full animate-pulse" style={{animationDelay: '0.5s', animationDuration: '3.5s'}}></div>
         <div className="absolute bottom-20 right-10 w-1 h-1 bg-white/30 rounded-full animate-bounce" style={{animationDelay: '1.5s', animationDuration: '4.5s'}}></div>
         <div className="absolute top-32 left-1/3 w-2 h-2 bg-blue-400/20 rounded-full animate-ping" style={{animationDelay: '3s', animationDuration: '6s'}}></div>
+      </div>
+        */}
+      <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
+        <Particles
+          particleColors={['#ffffff', '#ffffff']}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
       </div>
       <div aria-hidden="true" className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-3xl sm:-top-80 pointer-events-none">
         <div 
@@ -53,7 +68,16 @@ export default function PricingSection() {
       
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#bce5ef] mb-4">Nuestros Precios</h2>
+          <ScrollFloat
+            animationDuration={2}
+            ease='back.inOut(2)'
+            scrollStart='center bottom+=50%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            textColor='white'
+          >
+            Precios
+          </ScrollFloat>
           <p className="text-gray-400 text-lg">Elige el plan que mejor se adapte a ti. Todos nuestros planes incluyen acceso a ambas sedes.</p>
         </div>
         
@@ -62,7 +86,7 @@ export default function PricingSection() {
             <div 
               key={index} 
               className={`backdrop-blur-md border rounded-xl p-6 relative border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
-                plan.popular ? 'bg-white/10 h-120 shadow-[0_0_30px_rgba(253,255,0,0.1)]' : 'bg-white/5 h-110 hover:bg-white/10'
+                plan.popular ? 'bg-white/5 h-120 shadow-[0_0_30px_rgba(253,255,0,0.1)]' : 'bg-black/10 h-110 hover:bg-white/10'
               }`}
             >
               {plan.popular && (
@@ -105,7 +129,7 @@ export default function PricingSection() {
         </div>
       </div>
       <div className="px-6">
-        <div className="flex flex-col md:flex-row bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-6 gap-6 w-full md:w-200 mx-auto my-10 px-10 z-20">
+        <div className="flex flex-col md:flex-row bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-6 gap-6 w-full md:w-200 mx-auto mt-10 px-10 z-20">
           {/* Precio */}
           <div className="flex flex-col items-center justify-center bg-gradient-to-b from-[#fdff00]/20 to-transparent rounded-xl p-4 min-w-[120px]">
             <span className="text-xl text-gray-400 line-through">$720</span>

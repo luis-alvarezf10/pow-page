@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Activity, BicepsFlexed, Dumbbell, Heart, Footprints, Waves, Utensils, Carrot} from 'lucide-react';
+import Particles from '../components/Particles';
+import ScrollFloat from '../components/ScrollFloatText';
 
 export default function ServicesSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,7 +33,7 @@ export default function ServicesSection() {
       image: 'https://media.revistagq.com/photos/65b12cd1df908a3c3a4d7373/16:9/w_2560%2Cc_limit/fitness%2520portada.jpg',
     },
     {
-      title: 'Entrenamiento Personal',
+      title: 'Entrenamiento Personalizado',
       description: 'Sesiones personalizadas uno a uno con entrenadores certificados',
       icon: BicepsFlexed,
       availability: 'Disponible en ambas sedes',
@@ -68,18 +70,36 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="bg-[#141414] py-24 relative">
+    <section id="services" className="bg-gradient-to-b from-[#0d0d0d] to-[#141414] pb-24 pt-10 relative z-1">
+      <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
+        <Particles
+          particleColors={['#ffffff', '#ffffff']}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col justify-center items-center text-center mb-16">
-          <div className='space-x-2 pb-5'>
-            <span className='text-white text-3xl font-semibold'>Nuestros</span>
-            <span className='text-[#c6e4ee] font-bold text-5xl'>Servicios</span>
-          </div>
+          <ScrollFloat
+            animationDuration={2}
+            ease='back.inOut(2)'
+            scrollStart='center bottom+=50%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            textColor='#bce5ef'
+          >
+            Servicios
+          </ScrollFloat>
           <p className="text-gray-400 text-lg w-full md:w-3/4">
             Ofrecemos una amplia gama de servicios diseñados para ayudarte a alcanzar tus objetivos fitness, sin importar tu nivel actual o tus metas específicas.
           </p>
         </div>
-        <div className="hidden lg:block absolute -left-90 top-1/2 -translate-y-1/2 
+        {/* <div className="hidden lg:block absolute -left-90 top-1/2 -translate-y-1/2 
                 w-[500px] h-[500px] 
                 rounded-full 
                 bg-[#819ca3] 
@@ -94,7 +114,7 @@ export default function ServicesSection() {
                 opacity-40 blur-[120px] 
                 shadow-[0_0_100px_40px_#c6e4ee]
                 z-0">
-        </div>
+        </div> */}
         <div className="relative z-10">
           <div className="overflow-hidden overscroll-none touch-pan-y">
             <div 
@@ -103,7 +123,7 @@ export default function ServicesSection() {
             >
               {[...services, ...services].map((service, index) => (
                 <div key={index} className="w-full md:w-1/3 flex-shrink-0 px-4">
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-2xl h-[340px] relative ">
+                  <div className="bg-black/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-2xl h-[340px] relative ">
                     <div className="mt-6 flex items-center justify-center">
                       <div className="bg-[#819ca3] rounded-full p-5">
                         <service.icon className="w-12 h-12 text-white" />
@@ -114,8 +134,8 @@ export default function ServicesSection() {
                       <h3 className="text-2xl font-bold text-white mb-3 text-center">{service.title}</h3>
                       <p className="text-gray-300 text-md leading-relaxed text-center">{service.description}</p>
                     </div>
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 border border-yellow-400/40 rounded-full px-2 py-0.5 bg-yellow-400/10 w-65 text-center">
-                      <span className="text-yellow-400 text-sm font-semibold">{service.availability}</span>
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 border border-[#fdff00]/40 rounded-full px-2 py-0.5 bg-[#fdff00]/10 w-65 text-center">
+                      <span className="text-[#fdff00] text-sm font-semibold">{service.availability}</span>
                     </div>
                   </div>
                 </div>
