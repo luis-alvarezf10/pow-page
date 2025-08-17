@@ -129,7 +129,7 @@ export default function PricingSection() {
         </div>
       </div>
       <div className="px-6">
-        <div className="flex flex-col md:flex-row bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-6 gap-6 w-full md:w-200 mx-auto mt-10 px-10 z-20">
+        <div className="flex flex-col lg:flex-row  md:flex-row bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-6 gap-6 w-full md:w-200 mx-auto mt-10 px-10 z-20">
           {/* Precio */}
           <div className="flex flex-col items-center justify-center bg-gradient-to-b from-[#fdff00]/20 to-transparent rounded-xl p-4 min-w-[120px]">
             <span className="text-xl text-gray-400 line-through">$720</span>

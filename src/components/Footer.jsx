@@ -4,80 +4,64 @@ import SocialButtons from './SocialButtons';
 const Footer = () => {
 
   return (
-    <footer className="bg-gray-900 text-white py-16">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+    <footer className="bg-[#141414] text-white py-16">
+      <div className="max-w-6xl mx-auto px-6 w-1/2 md:w-full">
+        <div className="grid md:grid-cols-4 gap-8 mb-12 ">
           {/* Logo y descripción */}
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-permanent-marker text-yellow-400">Pow</span>
-              <span className="text-xl font-semibold text-white">Fitness</span>
-            </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Transformamos tu vida en 60 minutos. El gimnasio más innovador donde cada sesión cuenta.
+          <div className="">
+            <img src="/assets/images/pow-white.png" alt="logo pow" className="w-30 "/>
+            <p className="text-gray-300 my-4 leading-relaxed ">
+              Transformamos tu vida en 60 minutos. 
             </p>
             <SocialButtons />
           </div>
 
           {/* Sede Centro */}
           <div>
-            <h4 className="text-xl font-semibold mb-6 text-yellow-400">Sede Principal</h4>
+            <h4 className="text-xl font-semibold mb-6 text-white">Sede Principal</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="w-7 text-yellow-400 mt-1" />
+                <MapPin className="w-7 text-[#789da4] mt-1" />
                 <span className="text-gray-300">a 2 cuadras de Av. Principal<br />Lechería</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-yellow-400" />
+                <Phone className="w-5 h-5 text-[#789da4]" />
                 <span className="text-gray-300">+58 412-7563518</span>
-              </div>
-              <div className="space-y-1 text-gray-300 text-sm">
-                <div className="font-medium text-yellow-400">Horarios:</div>
-                  <div>Lun - Vie: 6:00 AM - 7:00 PM</div>
-                  <div>Sáb: 6:00 AM - 12:00 M</div>
               </div>
             </div>
           </div>
 
           {/* Sede Norte */}
           <div>
-            <h4 className="text-xl font-semibold mb-6 text-yellow-400">Sede Smash</h4>
+            <h4 className="text-xl font-semibold mb-6 text-white">Sede Smash</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="w-7 text-yellow-400 mt-1" />
+                <MapPin className="w-7 text-[#789da4] mt-1" />
                 <span className="text-gray-300">Av. Intercomunal, Atras de Inversan<br />Lechería</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-yellow-400" />
+                <Phone className="w-5 h-5 text-[#789da4]" />
                 <span className="text-gray-300">+58 412-2530116</span>
-              </div>
-              <div className="space-y-1 text-gray-300 text-sm">
-                <div className="font-medium text-yellow-400">Horarios:</div>
-                <div>Lun - Vie: 6:00 AM - 7:00 PM</div>
-                <div>Sáb: 6:00 AM - 12:00 M</div>
               </div>
             </div>
           </div>
 
           {/* Contacto General */}
           <div>
-            <h4 className="text-xl font-semibold mb-6 text-yellow-400">Contacto General</h4>
+            <h4 className="text-xl font-semibold mb-6 text-white">Contacto General</h4>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-yellow-400" />
+                <Mail className="w-5 h-5 text-[#789da4]" />
                 <span className="text-gray-300">info@powgym.com</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-yellow-400" />
+                <Phone className="w-5 h-5 text-[#789da4]" />
                 <span className="text-gray-300">+34 900 123 456</span>
               </div>
               <div className="space-y-2 text-gray-300 text-sm">
-                <div className="font-medium text-yellow-400">Servicios:</div>
-                <ol>
-                  <li>• Entrenamiento personalizado</li>
-                  <li>• Clases grupales</li>
-                  <li>• Asesoría nutricional</li>
-                </ol>
+              <div className="font-medium text-white">Horarios:</div>
+                <div>Lun - Vie: 6:00 AM - 7:00 PM</div>
+                <div>Sáb: 6:00 AM - 12:00 M</div>
               </div>
             </div>
           </div>

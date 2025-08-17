@@ -67,7 +67,7 @@ export default function Header() {
                 {section.name}
               </button>
             ))}
-            <button className="bg-white py-2 px-5 font-semibold rounded-full text-[#354345] cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">Contacto</button>
+            {/* <button className="bg-white py-2 px-5 font-semibold rounded-full text-[#354345] cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">Contacto</button> */}
           </div>
           
           {/* Mobile menu button */}
