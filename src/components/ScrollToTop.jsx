@@ -29,10 +29,9 @@ const ScrollToTop = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50 cursor-pointer"
-          style={{backgroundColor: 'black'}}
+          className="fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50 cursor-pointer bg-white"
         >
-          <ChevronUp className="w-6 h-6 text-white" />
+          <ChevronUp className="w-6 h-6 text-black" />
         </button>
       )}
     </>

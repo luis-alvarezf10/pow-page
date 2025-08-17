@@ -141,7 +141,7 @@ const TestimonialsSection = () => {
           {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
             <div key={index} className="w-96 flex-shrink-0">
               <SpotlightCard className="h-80 flex flex-col justify-center text-center">
-                <Quote className="w-12 h-12 text-[#bce5ef] fill-current mb-6" />
+                <Quote className="w-12 h-12 text-gray-300/10  mb-6" />
                 <p className="text-white mb-6 text-lg leading-relaxed italic">
                   "{testimonial.text}"
                 </p>
