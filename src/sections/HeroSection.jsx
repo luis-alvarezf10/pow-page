@@ -6,9 +6,8 @@ import LightRays from "../components/LightRays"
 export default function HeroSection() {
   return (
     <section id="hero" className="bg-gray-900 min-h-screen flex items-center relative overflow-hidden" style={{backgroundImage: 'url(/assets/images/gym.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
-      <div className="absolute inset-0 bg-black/80"></div>      
-      <div className="relative isolate lg:px-8 w-full z-10">
-        <div style={{ width: '100%', height: '600px', position: 'absolute' }}>
+      <div className="absolute inset-0 bg-black/80 "></div>      
+        <div style={{ width: '100%', height: '600px', position: 'absolute', top: 0 }}>
           <LightRays
             raysOrigin="top-center"
             raysColor="white"
@@ -22,16 +21,17 @@ export default function HeroSection() {
             className="custom-rays"
           />
         </div>
+      <div className="relative isolate lg:px-8 w-full z-10">
         <div aria-hidden="true" className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
           <div style={{clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"}} className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#5d8d99] to-[#9addff] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>
         </div>
         
         <div className="relative z-10 mx-auto max-w-2xl py-20 sm:py-25 lg:py-30">
-          <div className="mb-8 flex justify-center">
+          {/* <div className="mb-8 flex justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
               Nuestra historia e inicios <a href="#" className="font-semibold text-[#c6e4ee]"><span aria-hidden="true" className="absolute inset-0"></span>Leer más <span aria-hidden="true">&rarr;</span></a>
             </div>
-          </div>
+          </div> */}
           
           <div className="text-center">
             <div className="flex items-end justify-center">
