@@ -6,17 +6,25 @@ import ScrollFloat from '../components/ScrollFloatText';
 export default function ServicesSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-
-
   const nextSlide = () => {
     const increment = window.innerWidth < 768 ? 1 : 3;
-    setCurrentIndex((prev) => (prev + increment >= services.length ? 0 : prev + increment));
+    setCurrentIndex((prev) => {
+      const newIndex = prev + increment;
+      return newIndex >= services.length ? 0 : newIndex; // si pasa del último, vuelve al primero
+    });
   };
 
   const prevSlide = () => {
     const increment = window.innerWidth < 768 ? 1 : 3;
-    setCurrentIndex((prev) => (prev - increment < 0 ? Math.max(0, services.length - increment) : prev - increment));
+    setCurrentIndex((prev) => {
+      const newIndex = prev - increment;
+      return newIndex < 0 
+        ? services.length - (services.length % increment || increment) 
+        : newIndex;
+    });
   };
+
+  
   const services = [
     {
       title: 'CrossFit',
@@ -43,7 +51,7 @@ export default function ServicesSection() {
       title: 'Running',
       description: 'Plan de entrenamiento de running, sesiones cada 2 dias a la semana con la mejor planificación',
       icon: Footprints,
-      availability: 'Gratuito',
+      availability: 'Disponible',
       image: 'https://www.shape.com/thmb/XhaeY6hfYXOUEmpvxZKjOi_-H5A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/running-longer-or-faster-31e97070bda14ffc8afdea52094504c7.jpg',
     },
     {

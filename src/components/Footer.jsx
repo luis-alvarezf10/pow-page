@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail } from 'lucide-react';
 import SocialButtons from './SocialButtons';
+import powWhite from '../assets/images/pow-white.png';
 
 const Footer = () => {
 
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12 ">
           {/* Logo y descripción */}
           <div className="">
-            <img src="/assets/images/pow-white.png" alt="logo pow" className="w-30 "/>
+            <img src={powWhite} alt="logo pow" className="w-30 "/>
             <p className="text-gray-300 my-4 leading-relaxed ">
               Transformamos tu vida en 60 minutos. 
             </p>

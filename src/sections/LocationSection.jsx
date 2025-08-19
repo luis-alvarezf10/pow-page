@@ -142,9 +142,9 @@ export default function LocationSection() {
         </div>
       </div>
       <CurvedLoop 
-        marqueeText="Your only limit is you ✦ Silence the work, noise the success."
+        marqueeText="Your only limit is you ✦ Silence the work, noise the success ✦ "
         speed={2}
-        curveAmount={100}
+        curveAmount={200}
         interactive={false}
       />
     </section>

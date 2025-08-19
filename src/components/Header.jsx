@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import powWhite from '../assets/images/pow-white.png';
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -51,7 +52,7 @@ export default function Header() {
     }`}>
       <nav className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <img src="/assets/images/pow-white.png" alt="logo de pow en amarillo"  className="w-20 transition-transform duration-300 hover:scale-110 cursor-pointer "/>
+          <img   src={powWhite} alt="logo de pow en amarillo"  className="w-20 transition-transform duration-300 hover:scale-110 cursor-pointer "/>
           
           <div className="hidden md:flex items-center space-x-8">
             {sections.map((section) => (

@@ -1,7 +1,29 @@
 import { useState } from 'react';
 import ScrollFloat from '../components/ScrollFloatText';
+
+import eliminarImg from '../assets/images/elimar.PNG';
+import mariangelaImg from '../assets/images/mariangela.PNG';
+import jormanImg from '../assets/images/jorman.PNG';
+import cemento from '../assets/images/cemento.jpg';
+
 const StaffSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const getIncrement = () => (window.innerWidth < 768 ? 1 : 3);
+
+  const nextSlide = () => {
+    const increment = getIncrement();
+    setCurrentIndex((prev) => (prev + increment >= staff.length ? 0 : prev + increment));
+  };
+
+  const prevSlide = () => {
+    const increment = getIncrement();
+    setCurrentIndex((prev) => {
+      const newIndex = prev - increment;
+      // Si es negativo, volvemos al final del array
+      return newIndex < 0 ? staff.length - (staff.length % increment || increment) : newIndex;
+    });
+};
 
   const staff = [
     {
@@ -9,7 +31,7 @@ const StaffSection = () => {
       role: "Head Coach",
       specialty: "Running, Natación, Entrenamiento funcional & CrossFit",
       experience: "5 años",
-      image: "/assets/images/jorman.PNG",
+      image: jormanImg,
       category: "coach"
     },
     {
@@ -25,7 +47,7 @@ const StaffSection = () => {
       role: "Coach funcional ", 
       specialty: "Natacion, CrossFit & HIIT",
       experience: "6 años",
-      image: "/assets/images/elimar.PNG",
+      image: eliminarImg,
       category: "coach"
     },
     {
@@ -33,23 +55,13 @@ const StaffSection = () => {
       role: "Nutricionista",
       specialty: "Nutrición", 
       experience: "10 años",
-      image: "/assets/images/mariangela.PNG",
+      image: mariangelaImg,
       category: "nutri"
     },
   ];
 
-  const nextSlide = () => {
-    const increment = window.innerWidth < 768 ? 1 : 3;
-    setCurrentIndex((prev) => (prev + increment >= staff.length ? 0 : prev + increment));
-  };
-
-  const prevSlide = () => {
-    const increment = window.innerWidth < 768 ? 1 : 3;
-    setCurrentIndex((prev) => (prev - increment < 0 ? Math.max(0, staff.length - increment) : prev - increment));
-  };
-
   return (
-    <section id="staff" className="bg-gradient-to-t from-[#080808] to-[#0d0d0d] py-10 relative z-2" style={{backgroundImage: 'url(/assets/images/cemento.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+    <section id="staff" className="bg-gradient-to-t from-[#080808] to-[#0d0d0d] py-10 relative z-2" style={{backgroundImage: `url(${cemento})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
       <div className="absolute inset-0 bg-black/30"></div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="flex flex-col justify-center items-center text-center mb-10">

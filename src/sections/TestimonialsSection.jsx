@@ -3,6 +3,8 @@ import { useState, useRef, useEffect } from 'react';
 import ScrollFloat from '../components/ScrollFloatText';
 import Particles from '../components/Particles';
 import SpotlightCard from '../components/SpotLigthCard';
+import cemento from '../assets/images/cemento.jpg';
+
 
 const TestimonialsSection = () => {
   const [isDragging, setIsDragging] = useState(false);
@@ -92,7 +94,7 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="relative overflow-hidden" style={{backgroundImage: 'url(/assets/images/cemento.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+    <section id="testimonials" className="relative overflow-hidden" style={{backgroundImage: `url(${cemento})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
       <div className="bg-gradient-to-b from-[#141414] via-[#141414]/90 to-transparent pb-20">
         {/* <div aria-hidden="true" className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-3xl sm:-top-80 pointer-events-none">
           <div 

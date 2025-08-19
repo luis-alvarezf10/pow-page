@@ -2,10 +2,12 @@ import StartButton from "../components/StartButton";
 import SocialButtons from "../components/SocialButtons";
 import SplitText from "../components/SplitText";
 import LightRays from "../components/LightRays"
+import gym from "../assets/images/gym.jpg"
+import powWhite from '../assets/images/pow-white.png';
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="bg-gray-900 min-h-screen flex items-center relative overflow-hidden" style={{backgroundImage: 'url(/assets/images/gym.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+    <section id="hero" className="bg-gray-900 min-h-screen flex items-center relative overflow-hidden" style={{backgroundImage: `url(${gym})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
       <div className="absolute inset-0 bg-black/80 "></div>      
         <div style={{ width: '100%', height: '600px', position: 'absolute', top: 0 }}>
           <LightRays
@@ -35,7 +37,7 @@ export default function HeroSection() {
           
           <div className="text-center">
             <div className="flex items-end justify-center">
-              <img src="/assets/images/pow-white.png" alt="logo pow fitness" className=" relative z-10 w-1/2 relative left-5 transition-transform duration-300 hover:scale-110"/>
+              <img src={powWhite} alt="logo pow fitness" className=" relative z-10 w-1/2 relative left-5 transition-transform duration-300 hover:scale-110"/>
             </div>
             <SplitText
               text="Potenciamos tu vida en 60 minutos"
@@ -76,7 +78,7 @@ export default function HeroSection() {
         <div aria-hidden="true" className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
           <div style={{clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"}} className="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#5d8d99] to-[#9addff] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"></div>
         </div>
-        <div className="flex justify-center items-center relative bottom-10">
+        <div className="flex justify-center items-center relative  z-20 bottom-10">
           <SocialButtons />
         </div>
       </div>
