@@ -6,14 +6,15 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* Quitamos el overflow de aquí y lo dejamos solo en el body */
 }
 
 body {
   scroll-padding-top: 4rem;
-  overflow-x: hidden;
+  overflow-x: hidden; 
+  overflow-y: auto; /* Aseguramos que el vertical esté activo */
+  min-height: 100vh; /* Nos aseguramos que el cuerpo sea al menos del alto de la pantalla */
 }
-
 @keyframes scroll {
   0% {
     transform: translateX(0);
