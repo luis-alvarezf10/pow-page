@@ -1,164 +1,79 @@
-import { Quote } from 'lucide-react';
-import { useState, useRef, useEffect } from 'react';
-import ScrollFloat from '../components/ScrollFloatText';
-import Particles from '../components/Particles';
-import SpotlightCard from '../components/SpotLigthCard';
-import cemento from '../assets/images/cemento.jpg';
+const testimonials = [
+  {
+    name: 'María González',
+    text: 'Pow cambió por completo mi relación con el entrenamiento. Los coaches corrigen cada postura y el ambiente de las 6:00 AM es inigualable en Lechería.',
+    discipline: 'CrossFit',
+    time: '2 Años',
+  },
+  {
+    name: 'Carlos Ruiz',
+    text: 'La integración de WodUp es fantástica. Puedo ver mi progresión de cargas semana a semana y competir sanamente con mis compañeros de box.',
+    discipline: 'Bodybuilding',
+    time: '1 Año',
+  },
+  {
+    name: 'Ana López',
+    text: 'El acompañamiento de fisioterapia y nutrición bajo el mismo techo hace que no pierdas tiempo. Bajé 8% de grasa corporal y superé una lesión lumbar.',
+    discipline: 'Personalizado',
+    time: '8 Meses',
+  },
+  {
+    name: 'Diego Martín',
+    text: 'El box de la Sede Smash cuenta con máquinas pesadas de primer nivel. No hay otro centro deportivo en Anzoátegui con este estándar.',
+    discipline: 'Atleta Hyrox',
+    time: '3 Años',
+  },
+];
 
+const StarRating = () => (
+  <div className="flex items-center gap-0.5 text-[#e9ea00] mb-4">
+    {[...Array(5)].map((_, i) => (
+      <span key={i} className="material-symbols-outlined text-[18px]">star</span>
+    ))}
+  </div>
+);
 
-const TestimonialsSection = () => {
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const containerRef = useRef(null);
-  const intervalRef = useRef(null);
-
-  const testimonials = [
-    {
-      name: "María González",
-      text: "En solo 60 minutos sentí una energía increíble. El mejor entrenamiento de mi vida."
-    },
-    {
-      name: "Carlos Ruiz",
-      text: "Resultados visibles desde la primera sesión. Totalmente recomendado."
-    },
-    {
-      name: "Ana López",
-      text: "El equipo es excepcional y el ambiente motivador. No puedo estar más feliz."
-    },
-    {
-      name: "Diego Martín",
-      text: "Nunca pensé que podría lograr tanto en tan poco tiempo. Increíble experiencia."
-    }
-  ];
-
-  // Auto scroll
-  useEffect(() => {
-    const startAutoScroll = () => {
-      if (!isDragging && !isHovered && containerRef.current) {
-        intervalRef.current = setInterval(() => {
-          const container = containerRef.current;
-          if (container) {
-            container.scrollLeft += 1;
-            if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-              container.scrollLeft = 0;
-            }
-          }
-        }, 30);
-      }
-    };
-
-    const stopAutoScroll = () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-      }
-    };
-
-    if (!isDragging && !isHovered) {
-      startAutoScroll();
-    } else {
-      stopAutoScroll();
-    }
-
-    return stopAutoScroll;
-  }, [isDragging, isHovered]);
-
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - containerRef.current.offsetLeft);
-    setScrollLeft(containerRef.current.scrollLeft);
-    containerRef.current.style.cursor = 'grabbing';
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    containerRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    containerRef.current.style.cursor = 'grab';
-  };
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('mouseleave', handleMouseUp);
-      return () => container.removeEventListener('mouseleave', handleMouseUp);
-    }
-  }, []);
-
+export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="relative overflow-hidden" style={{backgroundImage: `url(${cemento})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
-      <div className="bg-gradient-to-b from-[#141414] via-[#141414]/90 to-transparent pb-20">
-        {/* <div aria-hidden="true" className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-3xl sm:-top-80 pointer-events-none">
-          <div 
-            style={{clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"}} 
-            className="relative left-1/2 aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#5d8d99] to-[#9addff] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          ></div>
-        </div> */}
-        <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
-          <Particles
-            particleColors={['#ffffff', '#ffffff']}
-            particleCount={200}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={100}
-            moveParticlesOnHover={false}
-            alphaParticles={false}
-            disableRotation={false}
-          />
+    <section id="testimonios" className="w-full py-12 md:py-18 px-5 lg:px-10 max-w-7xl mx-auto">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span className="font-['DM_Sans'] text-[10px] leading-[14px] uppercase tracking-[0.2em] text-[#e9ea00] block mb-1 font-semibold">
+            Comunidad y Resultados
+          </span>
+          <h2 className="font-['Oswald'] text-[32px] leading-[36px] md:text-[48px] md:leading-[52px] uppercase text-[#a5cdd7] tracking-tight font-semibold">
+            Lo que dicen nuestros clientes
+          </h2>
         </div>
-        <div className="max-w-6xl mx-auto px-6 mb-16 relative z-20">
-          <div className="text-center">
-            <ScrollFloat
-              animationDuration={2}
-              ease='back.inOut(2)'
-              scrollStart='center bottom+=50%'
-              scrollEnd='bottom bottom-=40%'
-              stagger={0.03}
-              textColor='#bce5ef'
-            >
-              Clientes
-            </ScrollFloat>
-            <p className="text-gray-300 text-lg">Testimonios reales de personas que transformaron su vida</p>
-          </div>
-        </div>
-
-        <div 
-          ref={containerRef}
-          className="flex gap-8 overflow-x-auto scrollbar-hide cursor-grab select-none px-6"
-          style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
-            <div key={index} className="w-96 flex-shrink-0">
-              <SpotlightCard className="h-80 flex flex-col justify-center text-center">
-                <Quote className="w-12 h-12 text-gray-300/10  mb-6" />
-                <p className="text-white mb-6 text-lg leading-relaxed italic">
-                  "{testimonial.text}"
-                </p>
-                <div className="font-semibold text-gray-400 text-lg">{testimonial.name}</div>
-              </SpotlightCard>
-            </div>
+        <div className="flex items-center gap-1 text-[#e9ea00]">
+          {[...Array(5)].map((_, i) => (
+            <span key={i} className="material-symbols-outlined text-[24px]">star</span>
           ))}
+          <span className="font-['DM_Sans'] text-[12px] leading-[16px] text-white ml-2 font-bold">4.9 / 5.0 en Google Reviews</span>
         </div>
-{/*         
-        <div aria-hidden="true" className="absolute inset-x-0 top-300 transform-gpu overflow-hidden blur-3xl sm:top-40 z-10 pointer-events-none">
-          <div style={{clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"}} className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#5d8d99] to-[#9addff] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"></div>
-        </div> */}
+      </div>
+
+      {/* Testimonials Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {testimonials.map((t, i) => (
+          <div key={i} className="rounded-2xl bg-[#201f1f]/60 backdrop-blur-xl p-8 flex flex-col justify-between shadow-lg">
+            <div>
+              <StarRating />
+              <p className="font-['DM_Sans'] text-[14px] leading-5 text-[#cac8aa] italic mb-6">
+                "{t.text}"
+              </p>
+            </div>
+            <div className="pt-4 flex items-center justify-between">
+              <div>
+                <h3 className="font-['DM_Sans'] text-[18px] leading-[24px] text-white font-bold">{t.name}</h3>
+                <span className="font-['DM_Sans'] text-[10px] leading-[14px] text-[#a5cdd7] uppercase font-semibold">{t.discipline} • {t.time}</span>
+              </div>
+              <span className="material-symbols-outlined text-[#e9ea00] text-[20px]">verified</span>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
-};
-
-export default TestimonialsSection;
+}

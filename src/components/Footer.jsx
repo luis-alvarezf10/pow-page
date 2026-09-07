@@ -1,88 +1,75 @@
-import { MapPin, Phone, Mail } from 'lucide-react';
-import SocialButtons from './SocialButtons';
 import powWhite from '../assets/images/pow-white.png';
 
-const Footer = () => {
+const footerLinks = [
+  { label: 'Términos', href: '#' },
+  { label: 'Privacidad', href: '#' },
+  { label: 'Reglamento', href: '#' },
+];
 
+export default function Footer() {
   return (
-    <footer className="bg-[#141414] text-white py-16">
-      <div className="max-w-6xl mx-auto px-6 w-1/2 md:w-full">
-        <div className="grid md:grid-cols-4 gap-8 mb-12 ">
-          {/* Logo y descripción */}
-          <div className="">
-            <img src={powWhite} alt="logo pow" className="w-30 "/>
-            <p className="text-gray-300 my-4 leading-relaxed ">
-              Transformamos tu vida en 60 minutos. 
+    <footer className="w-full bg-[#0e0e0e] pt-12 pb-6">
+      <div className="max-w-7xl mx-auto px-5 lg:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8">
+          {/* Col 1: Brand */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <img src={powWhite} alt="Pow Fitness Logo" className="h-8 w-auto object-contain" />
+              <span className="font-['Oswald'] text-[20px] leading-[26px] uppercase text-white tracking-wide font-medium">Pow Fitness</span>
+            </div>
+            <p className="font-['DM_Sans'] text-[12px] leading-[16px] text-[#cac8aa] leading-relaxed">
+              Entrenamiento de alta intensidad, disciplina implacable y comunidad atlética de élite en Lechería. Transformando potencia física en rendimiento para la vida diaria.
             </p>
-            <SocialButtons />
-          </div>
-
-          {/* Sede Centro */}
-          <div>
-            <h4 className="text-xl font-semibold mb-6 text-white">Sede Principal</h4>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-7 text-[#789da4] mt-1" />
-                <span className="text-gray-300">a 2 cuadras de Av. Principal<br />Lechería</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#789da4]" />
-                <span className="text-gray-300">+58 412-7563518</span>
-              </div>
+            <div className="flex items-center gap-2 pt-2">
+              <span className="font-['DM_Sans'] text-[10px] leading-[14px] uppercase text-[#e9ea00] px-2 py-1 bg-[#201f1f] rounded font-semibold">CrossFit Affiliate</span>
+              <span className="font-['DM_Sans'] text-[10px] leading-[14px] uppercase text-[#a5cdd7] px-2 py-1 bg-[#201f1f] rounded font-semibold">WodUp Track</span>
             </div>
           </div>
 
-          {/* Sede Norte */}
-          <div>
-            <h4 className="text-xl font-semibold mb-6 text-white">Sede Smash</h4>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-7 text-[#789da4] mt-1" />
-                <span className="text-gray-300">Av. Intercomunal, Atras de Inversan<br />Lechería</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#789da4]" />
-                <span className="text-gray-300">+58 412-2530116</span>
-              </div>
-            </div>
+          {/* Col 2: Sede Principal */}
+          <div className="flex flex-col gap-3">
+            <h3 className="font-['Oswald'] text-[20px] leading-[26px] uppercase text-white tracking-wider font-medium">Sede Principal</h3>
+            <p className="font-['DM_Sans'] text-[12px] leading-[16px] text-[#cac8aa]">Lechería, a 2 cuadras de la Av. Principal, Anzoátegui.</p>
+            <p className="font-['DM_Sans'] text-[12px] leading-[16px] text-[#cac8aa]">Lunes a Viernes: 6:00 AM – 7:00 PM</p>
+            <p className="font-['DM_Sans'] text-[12px] leading-[16px] text-[#cac8aa]">Sábados: 6:00 AM – 12:00 PM</p>
+            <a className="font-['DM_Sans'] text-[10px] leading-[14px] text-[#a5cdd7] uppercase pt-1 hover:underline font-semibold" href="tel:+584127563518">+58 412-7563518</a>
           </div>
 
-          {/* Contacto General */}
-          <div>
-            <h4 className="text-xl font-semibold mb-6 text-white">Contacto General</h4>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-[#789da4]" />
-                <span className="text-gray-300">info@powgym.com</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#789da4]" />
-                <span className="text-gray-300">+34 900 123 456</span>
-              </div>
-              <div className="space-y-2 text-gray-300 text-sm">
-              <div className="font-medium text-white">Horarios:</div>
-                <div>Lun - Vie: 6:00 AM - 7:00 PM</div>
-                <div>Sáb: 6:00 AM - 12:00 M</div>
-              </div>
-            </div>
+          {/* Col 3: Sede Smash */}
+          <div className="flex flex-col gap-3">
+            <h3 className="font-['Oswald'] text-[20px] leading-[26px] uppercase text-white tracking-wider font-medium">Sede Smash</h3>
+            <p className="font-['DM_Sans'] text-[12px] leading-[16px] text-[#cac8aa]">Lechería, Av. Intercomunal, Detrás de Inversan.</p>
+            <p className="font-['DM_Sans'] text-[12px] leading-[16px] text-[#cac8aa]">Lunes a Viernes: 6:00 AM – 7:00 PM</p>
+            <p className="font-['DM_Sans'] text-[12px] leading-[16px] text-[#cac8aa]">Sábados: 6:00 AM – 12:00 PM</p>
+            <a className="font-['DM_Sans'] text-[10px] leading-[14px] text-[#a5cdd7] uppercase pt-1 hover:underline font-semibold" href="tel:+584122530116">+58 412-2530116</a>
+          </div>
+
+          {/* Col 4: Contact */}
+          <div className="flex flex-col gap-3">
+            <h3 className="font-['Oswald'] text-[20px] leading-[26px] uppercase text-white tracking-wider font-medium">Contacto Directo</h3>
+            <p className="font-['DM_Sans'] text-[12px] leading-[16px] text-[#cac8aa]">Atención inmediata vía WhatsApp oficial:</p>
+            <a className="font-['Oswald'] text-[20px] leading-[26px] text-[#e9ea00] hover:underline" href="https://wa.me/584127563518" target="_blank" rel="noopener noreferrer">
+              +58 412-7563518
+            </a>
+            <p className="font-['DM_Sans'] text-[12px] leading-[16px] text-[#cac8aa] pt-2">Email: info@powfitness.com</p>
+            <p className="font-['DM_Sans'] text-[12px] leading-[16px] text-[#cac8aa]">Lechería • Anzoátegui • Venezuela</p>
           </div>
         </div>
 
-        {/* Línea divisoria y copyright */}
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © 2024 POW Gym. Todos los derechos reservados.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-yellow-400 text-sm transition-colors">Política de Privacidad</a>
-              <a href="#" className="text-gray-400 hover:text-yellow-400 text-sm transition-colors">Términos de Uso</a>
-            </div>
+        {/* Copyright */}
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 bg-[#0e0e0e]">
+          <p className="font-['DM_Sans'] text-[12px] leading-[16px] text-[#cac8aa]">
+            © 2026 Pow Fitness. Todos los derechos reservados.
+          </p>
+          <div className="flex items-center gap-6">
+            {footerLinks.map((link, i) => (
+              <a key={i} className="font-['DM_Sans'] text-[10px] leading-[14px] uppercase text-[#cac8aa] hover:text-white transition-colors font-semibold" href={link.href}>
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

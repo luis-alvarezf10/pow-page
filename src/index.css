@@ -1,194 +1,86 @@
 @import "tailwindcss";
 
-.font-permanent-marker {
-  font-family: 'Permanent Marker', cursive;
+/* ===== DESIGN SYSTEM TOKENS ===== */
+:root {
+  /* Surfaces */
+  --surface: #131313;
+  --surface-container-lowest: #0e0e0e;
+  --surface-container-low: #1c1b1b;
+  --surface-container: #201f1f;
+  --surface-container-high: #2a2a2a;
+  --surface-container-highest: #353534;
+  --surface-bright: #393939;
+  --surface-variant: #353534;
+
+  /* Primary */
+  --primary: #ffffff;
+  --primary-container: #e9ea00;
+  --on-primary: #323200;
+  --on-primary-container: #676800;
+
+  /* Secondary */
+  --secondary: #a5cdd7;
+  --secondary-container: #244c55;
+  --secondary-fixed: #c0e9f4;
+  --on-secondary: #08363d;
+  --on-secondary-container: #94bcc5;
+
+  /* Tertiary */
+  --tertiary: #ffffff;
+
+  /* Text */
+  --on-surface: #e5e2e1;
+  --on-surface-variant: #cac8aa;
+
+  /* Error */
+  --error: #ffb4ab;
+  --error-container: #93000a;
+
+  /* Outline */
+  --outline: #939277;
+  --outline-variant: #484831;
 }
 
+/* ===== BASE STYLES ===== */
 html {
   scroll-behavior: smooth;
-  /* Quitamos el overflow de aquí y lo dejamos solo en el body */
+  scroll-padding-top: 5rem;
 }
 
 body {
-  scroll-padding-top: 4rem;
-  overflow-x: hidden; 
-  overflow-y: auto; /* Aseguramos que el vertical esté activo */
-  min-height: 100vh; /* Nos aseguramos que el cuerpo sea al menos del alto de la pantalla */
-}
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes scroll-smooth {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 15s linear infinite;
-}
-
-.animate-scroll-smooth {
-  animation: scroll-smooth 20s linear infinite;
-}
-
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-@keyframes carousel-continuous {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-carousel-continuous {
-  animation: carousel-continuous 25s linear infinite;
-}
-
-/* Social Media Styles */
-.social-container {
-  width: 52px;
-  height: 52px;
-  background-color: #819ca3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition-duration: 0.3s;
-  border-radius: 30px;
-}
-
-.social-container:hover {
-  transform: scale(1.2);
-}
-
-.social-container:active {
-  transform: scale(0.9);
-  transition-duration: 0.3s;
-}
-
-.social-svg {
-  width: 22px;
-}
-
-.social-svg path {
-  fill: rgb(255, 255, 255);
-}
-
-.social-container:hover .social-svg {
-  animation: slide-in-top 0.3s both;
-}
-
-.instagram:hover {
-  background-color: #E4405F;
-  transition-duration: 0.3s;
-}
-
-.twitter:hover {
-  background-color: #00acee;
-  transition-duration: 0.3s;
-}
-
-.linkedin:hover {
-  background-color: #0072b1;
-  transition-duration: 0.3s;
-}
-
-.whatsapp:hover {
-  background-color: #25D366;
-  transition-duration: 0.3s;
-}
-
-.tiktok:hover {
-  background-color: #000000;
-  transition-duration: 0.3s;
-}
-
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Testimonials Styles */
-.testimonial-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.testimonial-card::before {
-  content: '';
-  position: absolute;
-  bottom: -70%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(250, 204, 21, 0.15) 0%, transparent 70%);
-  transform: translateX(-50%);
-  transition: all 0.4s ease;
-  pointer-events: none;
-}
-
-.testimonial-card:hover::before {
-  bottom: -50%;
-  background: radial-gradient(circle, rgba(250, 204, 21, 0.3) 0%, transparent 70%);
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(250, 204, 21, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-/* Prevent overscroll bounce on mobile */
-body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   overscroll-behavior: none;
 }
 
-.overflow-hidden {
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-x: none;
+/* Hide scrollbar */
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+
+/* ===== MATERIAL ICON HELPER ===== */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* ===== MARQUEE ANIMATION ===== */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ===== SUBTLE PULSE FOR WHATSAPP ===== */
+@keyframes gentle-pulse {
+  0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.8); }
+  50% { box-shadow: 0 8px 32px rgba(0,0,0,0.8), 0 0 20px rgba(37,211,102,0.4); }
+}
+
+/* ===== SCROLLBAR HIDE UTILITY ===== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
