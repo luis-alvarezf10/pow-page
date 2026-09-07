@@ -45,7 +45,7 @@ export default function WodUpSection() {
             </div>
 
             {/* Download badges */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            {/* <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="https://apps.apple.com/us/app/wodup/id1407715516"
                 target="_blank"
@@ -70,7 +70,7 @@ export default function WodUpSection() {
                   <span className="font-['DM_Sans'] text-[18px] leading-[24px] font-bold text-white">Google Play</span>
                 </div>
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Right: App icon */}
