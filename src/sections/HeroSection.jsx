@@ -38,7 +38,7 @@ export default function HeroSection() {
 
         {/* Headline */}
         <h1 className="font-['Oswald'] text-[40px] leading-[44px] md:text-[64px] md:leading-[68px] uppercase text-white tracking-tight max-w-4xl text-balance font-bold">
-          Potenciamos tu vida en 60 minutos
+          Potenciamos tu día en 60 minutos
         </h1>
 
         {/* Subheadline */}
