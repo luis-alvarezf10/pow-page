@@ -1,3 +1,8 @@
+import jormanImg from '../assets/images/jorman-c.png';
+import ricardoImg from '../assets/images/ricardo-c.png';
+import elimarImg from '../assets/images/elimarc.png';
+import mariangelaImg from '../assets/images/mariangela-c.png';
+
 const staff = [
   {
     name: 'Jorman Sánchez',
@@ -5,6 +10,7 @@ const staff = [
     specialty: 'Running, Natación, Entrenamiento funcional & CrossFit — 5 años de trayectoria.',
     category: 'Coach',
     categoryColor: 'bg-[#e9ea00] text-[#323200]',
+    image: jormanImg,
   },
   {
     name: 'Ricardo Lugo',
@@ -12,6 +18,7 @@ const staff = [
     specialty: 'Fuerza & acondicionamiento biomecánico preventivo — 8 años de experiencia.',
     category: 'Fisioterapeuta',
     categoryColor: 'bg-[#244c55] text-[#c0e9f4]',
+    image: ricardoImg,
   },
   {
     name: 'Elimar Barrios',
@@ -19,6 +26,7 @@ const staff = [
     specialty: 'Natación de competición, CrossFit & HIIT metabólico — 6 años dirigiendo atletas.',
     category: 'Coach',
     categoryColor: 'bg-[#e9ea00] text-[#323200]',
+    image: elimarImg,
   },
   {
     name: 'Mariangela Álvarez',
@@ -26,6 +34,7 @@ const staff = [
     specialty: 'Nutrición clínica, cineantropometría ISAK y rendimiento deportivo — 10 años.',
     category: 'Nutricionista',
     categoryColor: 'bg-[#69db7c] text-[#003919]',
+    image: mariangelaImg,
   },
 ];
 
@@ -54,6 +63,9 @@ export default function StaffSection() {
             key={i}
             className="group relative h-[450px] rounded-2xl bg-[#201f1f]/70 backdrop-blur-xl overflow-hidden flex flex-col justify-end p-6 shadow-xl"
           >
+            {/* Photo */}
+            <img src={member.image} alt={member.name} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+
             {/* Gradient overlay */}
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0e0e0e] via-[#0e0e0e]/60 to-transparent" />
 
